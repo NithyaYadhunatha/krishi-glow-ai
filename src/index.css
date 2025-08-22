@@ -129,7 +129,6 @@
     border-color: hsl(var(--primary-glow));
   }
 }
-}
 
 @layer base {
   * {
