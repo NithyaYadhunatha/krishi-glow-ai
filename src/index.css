@@ -8,7 +8,8 @@
   :root {
     /* Core Background & Agricultural Theme */
     --background: 0 0% 0%; /* Pure Black */
-    --foreground: 210 14% 89%; /* Off-white (#EAEAEA) */
+    --foreground: 0 0% 100%; /* Pure White (#FFFFFF) */
+    --muted-foreground: 0 0% 80%; /* Soft Grey (#CCCCCC) */
     
     /* Glassmorphic Elements */
     --glass-dark: 0 0% 0% / 0.4; /* Semi-transparent black */
@@ -17,8 +18,12 @@
     
     /* Primary Agricultural Colors */
     --primary: 114 77% 20%; /* Metallic Green (#237414) */
-    --primary-foreground: 210 14% 89%;
+    --primary-foreground: 0 0% 100%; /* Pure white */
     --primary-glow: 114 77% 35%; /* Brighter for glows */
+    
+    /* Neon Accent Colors */
+    --neon-green: 120 100% 50%; /* Neon green (#00FF66) */
+    --neon-glow: 120 100% 50% / 0.4; /* Neon green with opacity */
     
     /* Secondary & Accent Colors */
     --secondary: 81 52% 55%; /* Apple Green (#6DBE47) */
@@ -59,8 +64,9 @@
     --backdrop-blur-subtle: blur(10px);
     
     /* Glow Shadows */
-    --shadow-glow: 0 0 30px hsl(114 77% 35% / 0.4);
-    --shadow-glow-strong: 0 0 40px hsl(114 77% 35% / 0.6);
+    --shadow-glow: 0 0 30px hsl(var(--neon-green) / 0.3);
+    --shadow-glow-strong: 0 0 50px hsl(var(--neon-green) / 0.6);
+    --shadow-neon: 0 0 60px hsl(var(--neon-green) / 0.5);
     --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);
     
     /* Animation Variables */
@@ -104,7 +110,7 @@
   
   /* Agricultural Background Pattern */
   .agricultural-bg {
-    background-image: var(--gradient-overlay);
+    background-image: linear-gradient(180deg, hsl(0 0% 0% / 0.8), hsl(0 0% 0% / 0.9)), var(--gradient-overlay);
     position: relative;
   }
   
@@ -126,7 +132,25 @@
   
   .glow-hover:hover {
     box-shadow: var(--shadow-glow-strong);
-    border-color: hsl(var(--primary-glow));
+    border-color: hsl(var(--neon-green));
+    transform: translateY(-2px);
+  }
+  
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+    border: 1px solid hsl(var(--neon-green) / 0.3);
+  }
+  
+  .neon-text {
+    color: hsl(var(--neon-green));
+    text-shadow: 0 0 10px hsl(var(--neon-green) / 0.5);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--neon-green)), hsl(var(--primary-glow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 

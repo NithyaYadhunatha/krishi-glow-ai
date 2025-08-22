@@ -33,6 +33,10 @@ export default {
 					foreground: 'hsl(var(--primary-foreground))',
 					glow: 'hsl(var(--primary-glow))'
 				},
+				neon: {
+					DEFAULT: 'hsl(var(--neon-green))',
+					glow: 'hsl(var(--neon-glow))'
+				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))',
@@ -77,6 +81,7 @@ export default {
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
 				'glow-strong': 'var(--shadow-glow-strong)',
+				'neon': 'var(--shadow-neon)',
 				'glass': 'var(--shadow-glass)'
 			},
 			borderRadius: {
@@ -107,6 +112,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-up': 'slide-up 0.6s ease-out'
 			},
@@ -134,6 +140,10 @@ export default {
 				'slide-up': {
 					'0%': { transform: 'translateY(100%)' },
 					'100%': { transform: 'translateY(0)' }
+				},
+				'neon-pulse': {
+					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--neon-green) / 0.4)' },
+					'50%': { boxShadow: '0 0 40px hsl(var(--neon-green) / 0.8)' }
 				}
 			}
 		}
